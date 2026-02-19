@@ -15,65 +15,48 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 body{background:var(--bg);color:var(--text);font-family:'Courier New',monospace;font-size:17px;min-height:100vh;padding-bottom:90px;-webkit-font-smoothing:antialiased;}
-
 .topbar{background:var(--bg);border-bottom:1px solid var(--border);padding:16px 18px 12px;position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;}
 .logo{font-size:21px;font-weight:900;color:var(--accent);letter-spacing:3px;}
 .logo-sub{font-size:10px;color:var(--dim);letter-spacing:2px;margin-top:2px;}
 .score-label{font-size:10px;color:var(--dim);letter-spacing:1px;text-align:right;}
 .score-val{font-size:33px;font-weight:900;font-family:monospace;text-align:right;line-height:1;}
-
 .nav{position:fixed;bottom:0;left:0;right:0;background:#0c0c14;border-top:1px solid var(--border);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom);}
-.nav-btn{flex:1;padding:10px 2px 8px;background:none;border:none;color:var(--dim);font-family:inherit;font-size:10px;font-weight:700;letter-spacing:0.5px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.nav-btn{flex:1;padding:10px 2px 8px;background:none;border:none;color:var(--dim);font-family:inherit;font-size:10px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;}
 .nav-btn .icon{font-size:22px;}
 .nav-btn.active{color:var(--accent);}
-
 .view{display:none;padding:16px;max-width:600px;margin:0 auto;}
 .view.active{display:block;}
-
 .card{background:var(--surface);border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-bottom:14px;}
-.card-title{font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:14px;}
-
 .field{margin-bottom:14px;}
 .field label{font-size:14px;color:var(--text2);display:block;margin-bottom:7px;line-height:1.4;}
 input,textarea,select{width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:16px;padding:12px 14px;outline:none;-webkit-appearance:none;appearance:none;}
 input:focus,textarea:focus{border-color:var(--accent);}
 textarea{min-height:78px;resize:vertical;line-height:1.5;}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-
-.btn{display:block;width:100%;background:var(--accent);color:#000;border:2px solid var(--accent);border-radius:12px;padding:14px 20px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;letter-spacing:0.5px;margin-top:12px;text-align:center;}
+.btn{display:block;width:100%;background:var(--accent);color:#000;border:2px solid var(--accent);border-radius:12px;padding:14px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;margin-top:12px;text-align:center;}
 .btn:active{opacity:0.75;}
-.btn.outline{background:transparent;color:var(--accent);}
-.btn.green{background:var(--green);border-color:var(--green);color:#000;}
 .btn.purple{background:var(--purple);border-color:var(--purple);color:#000;}
 .btn.sm{width:auto;padding:9px 18px;font-size:14px;margin-top:0;}
-.btn.sm-dim{width:auto;padding:9px 18px;font-size:13px;margin-top:0;background:transparent;color:var(--dim);border:1.5px solid var(--border);}
-
 .counters{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .counter{background:var(--card);border:1.5px solid var(--border);border-radius:14px;padding:14px 12px;}
 .counter-label{font-size:12px;color:var(--dim);letter-spacing:0.5px;margin-bottom:10px;font-weight:700;}
 .counter-row{display:flex;align-items:center;gap:6px;}
-.cnt-btn{width:38px;height:38px;border-radius:50%;flex-shrink:0;border:1.5px solid var(--border);background:#ffffff11;color:var(--text);font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;}
+.cnt-btn{width:38px;height:38px;border-radius:50%;flex-shrink:0;border:1.5px solid var(--border);background:#ffffff11;color:var(--text);font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
 .counter-val{font-size:32px;font-weight:900;font-family:monospace;flex:1;text-align:center;}
-.progress-bar{height:5px;background:var(--border);border-radius:3px;margin-top:10px;overflow:hidden;}
-.progress-fill{height:100%;border-radius:3px;transition:width 0.4s;}
-
-.revenue-box{background:var(--card);border:1.5px solid var(--border);border-radius:14px;padding:16px;margin-top:12px;}
-.revenue-label{font-size:11px;color:var(--dim);letter-spacing:1px;}
-.revenue-val{font-size:36px;font-weight:900;color:var(--green);font-family:monospace;margin:4px 0 12px;}
-.quick-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.pb{height:5px;background:var(--border);border-radius:3px;margin-top:10px;overflow:hidden;}
+.pbf{height:100%;border-radius:3px;transition:width 0.4s;}
+.rev-box{background:var(--card);border:1.5px solid var(--border);border-radius:14px;padding:16px;margin-top:12px;}
+.rev-lbl{font-size:11px;color:var(--dim);letter-spacing:1px;}
+.rev-val{font-size:36px;font-weight:900;color:var(--green);font-family:monospace;margin:4px 0 12px;}
+.qbtns{display:flex;gap:8px;flex-wrap:wrap;}
 .qbtn{background:#2ecc7122;border:1.5px solid #2ecc7133;color:var(--green);border-radius:8px;padding:9px 14px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;}
-
-.badge{display:inline-block;border-radius:5px;padding:3px 9px;font-size:12px;font-weight:700;letter-spacing:0.5px;}
-
 .banner{border-radius:10px;padding:12px 14px;font-size:14px;margin-bottom:12px;line-height:1.5;}
 .banner.green{background:#2ecc7111;border:1px solid #2ecc7133;color:var(--green);}
 .banner.accent{background:#f0a83011;border:1px solid #f0a83033;color:var(--accent);}
 .banner.dim{background:var(--card);border:1px solid var(--border);color:var(--text2);font-size:13px;}
-
 .mit-box{background:#f0a83011;border:1.5px solid #f0a83033;border-radius:14px;padding:14px;margin-bottom:14px;}
 .mit-lbl{font-size:11px;color:var(--accent);letter-spacing:1px;margin-bottom:6px;}
 .mit-txt{font-size:17px;color:var(--text);font-weight:700;line-height:1.4;}
-
 .habit-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
 .habit-table{width:100%;border-collapse:collapse;min-width:300px;}
 .habit-table th{font-size:12px;color:var(--dim);padding:6px 3px;text-align:center;}
@@ -81,68 +64,58 @@ textarea{min-height:78px;resize:vertical;line-height:1.5;}
 .habit-table td{padding:8px 3px;border-top:1px solid var(--border);}
 .habit-table td.hn{font-size:15px;padding-right:10px;}
 .hcheck{width:34px;height:34px;border-radius:8px;margin:0 auto;border:2px solid var(--border);background:#ffffff08;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:17px;}
-
 .lead-card{background:var(--card);border-radius:14px;padding:14px;margin-bottom:10px;border-left:3px solid var(--dim);}
 .lead-name{font-size:18px;font-weight:700;}
 .lead-meta{font-size:14px;color:var(--dim);margin:3px 0 6px;}
 .lead-note{font-size:14px;color:var(--text2);margin-bottom:10px;line-height:1.4;}
 .status-btns{display:flex;gap:6px;flex-wrap:wrap;}
 .sbtn{border-radius:5px;padding:6px 10px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;background:transparent;}
-
+.badge{display:inline-block;border-radius:5px;padding:3px 9px;font-size:12px;font-weight:700;}
 .page-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
 .page-title{font-size:24px;font-weight:900;}
 .page-sub{font-size:14px;color:var(--dim);margin-top:2px;}
+.stat-big{font-size:36px;font-weight:900;font-family:monospace;}
 
-/* ── HOSTING NOTICE ── */
-.hosting-box{background:var(--card);border:2px solid var(--red);border-radius:18px;padding:20px;margin-bottom:16px;}
-.hosting-title{font-size:19px;font-weight:900;color:var(--red);margin-bottom:10px;}
-.hosting-text{font-size:15px;color:var(--text2);line-height:1.6;margin-bottom:16px;}
-.step-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;padding:12px;background:var(--surface);border-radius:12px;}
-.step-num{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#000;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.step-text{font-size:15px;color:var(--text);line-height:1.5;}
-.step-text b{color:var(--accent);}
-.step-text a{color:var(--blue);text-decoration:none;}
-.url-box{background:#5ba4f511;border:1.5px solid #5ba4f533;border-radius:10px;padding:12px 14px;font-size:16px;color:var(--blue);font-weight:700;margin:8px 0;text-align:center;word-break:break-all;}
-
-/* ── API SETUP ── */
-.setup-box{background:var(--card);border:2px solid var(--purple);border-radius:18px;padding:20px;margin-bottom:16px;}
-.setup-title{font-size:19px;font-weight:900;color:var(--purple);margin-bottom:10px;}
-.setup-text{font-size:15px;color:var(--text2);line-height:1.6;margin-bottom:14px;}
-.setup-steps{font-size:15px;color:var(--text);line-height:1.9;margin-bottom:16px;}
-.setup-steps b{color:var(--accent);}
-.api-row{display:flex;gap:8px;}
-.api-row input{flex:1;font-size:14px;}
-.api-save{background:var(--purple);border:none;color:#fff;border-radius:10px;padding:13px 16px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;flex-shrink:0;}
-.api-saved{background:#2ecc7111;border:1px solid #2ecc7133;color:var(--green);border-radius:10px;padding:11px 14px;font-size:14px;font-weight:700;display:none;margin-top:10px;text-align:center;}
+/* ── AI SETUP ── */
+.setup-card{background:var(--card);border:2px solid var(--purple);border-radius:18px;padding:20px;margin-bottom:14px;}
+.setup-title{font-size:20px;font-weight:900;color:var(--purple);margin-bottom:10px;}
+.setup-intro{font-size:15px;color:var(--text2);line-height:1.6;margin-bottom:16px;}
+.step{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;padding:12px;background:var(--surface);border-radius:12px;}
+.step-n{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#000;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-t{font-size:15px;color:var(--text);line-height:1.6;}
+.step-t b{color:var(--accent);}
+.step-t code{background:#22223a;border-radius:5px;padding:2px 8px;font-size:13px;color:var(--blue);font-family:'Courier New',monospace;}
+.url-row{display:flex;gap:8px;margin-top:4px;}
+.url-row input{flex:1;font-size:14px;}
+.url-save{background:var(--purple);border:none;color:#fff;border-radius:10px;padding:14px 18px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;flex-shrink:0;}
+.url-ok{background:#2ecc7111;border:1px solid #2ecc7133;color:var(--green);border-radius:10px;padding:12px;font-size:15px;font-weight:700;display:none;margin-top:10px;text-align:center;}
 
 /* ── CHAT ── */
-.ai-header{background:var(--card);border:1.5px solid var(--purple);border-radius:16px;padding:14px 16px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;}
-.ai-h-title{font-size:16px;font-weight:900;color:var(--purple);}
-.ai-h-sub{font-size:13px;color:var(--text2);margin-top:2px;}
-.chat-area{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:14px;min-height:180px;margin-bottom:12px;max-height:48vh;overflow-y:auto;-webkit-overflow-scrolling:touch;}
-.msg{margin-bottom:14px;animation:fi 0.25s ease;}
-@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ai-bar{background:var(--card);border:1.5px solid var(--purple);border-radius:14px;padding:13px 16px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;}
+.ai-bar-t{font-size:16px;font-weight:900;color:var(--purple);}
+.ai-bar-s{font-size:13px;color:var(--text2);margin-top:2px;}
+.change-btn{background:none;border:1.5px solid var(--border);color:var(--dim);border-radius:8px;padding:8px 14px;font-family:inherit;font-size:13px;cursor:pointer;}
+.chat-area{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:14px;min-height:200px;margin-bottom:12px;max-height:46vh;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.msg{margin-bottom:14px;animation:fi 0.2s ease;}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .msg-user{text-align:right;}
-.msg-bubble{display:inline-block;max-width:90%;border-radius:14px;padding:12px 15px;font-size:15px;line-height:1.55;text-align:left;}
-.msg-user .msg-bubble{background:var(--accent);color:#000;font-weight:600;}
-.msg-ai .msg-bubble{background:#22223a;color:var(--text);border:1px solid var(--border);}
-.msg-ai .msg-bubble b{color:var(--accent);}
-.msg-label{font-size:11px;color:var(--dim);margin-bottom:4px;letter-spacing:0.5px;}
-.chat-input-row{display:flex;gap:8px;}
-.chat-input-row textarea{flex:1;min-height:54px;font-size:16px;padding:12px;}
-.send-btn{width:54px;height:54px;border-radius:14px;flex-shrink:0;background:var(--purple);border:none;color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;align-self:flex-end;}
-.send-btn:disabled{opacity:0.35;}
-.quick-prompts{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
-.qp-btn{background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;font-family:inherit;font-size:15px;color:var(--text);cursor:pointer;text-align:left;line-height:1.4;}
-.qp-btn:active{border-color:var(--purple);}
-.empty-chat{color:var(--dim);font-size:15px;text-align:center;padding:20px;}
-.typing{display:flex;gap:5px;padding:6px 2px;}
+.bubble{display:inline-block;max-width:90%;border-radius:14px;padding:12px 15px;font-size:15px;line-height:1.6;text-align:left;}
+.msg-user .bubble{background:var(--accent);color:#000;font-weight:600;}
+.msg-ai .bubble{background:#1e1e30;color:var(--text);border:1px solid var(--border);}
+.msg-ai .bubble b{color:var(--accent);}
+.msg-lbl{font-size:11px;color:var(--dim);margin-bottom:4px;letter-spacing:0.5px;}
+.typing{display:flex;gap:5px;padding:4px 0;}
 .typing span{width:8px;height:8px;border-radius:50%;background:var(--purple);animation:bl 1.2s infinite;}
-.typing span:nth-child(2){animation-delay:0.2s;}
-.typing span:nth-child(3){animation-delay:0.4s;}
-@keyframes bl{0%,80%,100%{opacity:0.2}40%{opacity:1}}
-
-.stat-big{font-size:36px;font-weight:900;font-family:monospace;}
+.typing span:nth-child(2){animation-delay:.2s;}
+.typing span:nth-child(3){animation-delay:.4s;}
+@keyframes bl{0%,80%,100%{opacity:.2}40%{opacity:1}}
+.chat-row{display:flex;gap:8px;}
+.chat-row textarea{flex:1;min-height:52px;font-size:16px;padding:12px;}
+.send-btn{width:52px;height:52px;border-radius:12px;flex-shrink:0;background:var(--purple);border:none;color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;align-self:flex-end;}
+.send-btn:disabled{opacity:0.3;}
+.qps{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+.qp{background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:13px 15px;font-family:inherit;font-size:15px;color:var(--text);cursor:pointer;text-align:left;line-height:1.4;}
+.qp:active{border-color:var(--purple);}
 </style>
 </head>
 <body>
@@ -152,7 +125,7 @@ textarea{min-height:78px;resize:vertical;line-height:1.5;}
   <div><div class="score-label">РЕЗУЛТАТ ДНЕС</div><div class="score-val" id="topScore" style="color:var(--accent)">0%</div></div>
 </div>
 
-<!-- ═══ ДНЕС ═══ -->
+<!-- ДНЕС -->
 <div id="view-day" class="view active">
   <div class="page-row">
     <div><div class="page-title">ДНЕС ⚡</div><div class="page-sub" id="todayDate"></div></div>
@@ -162,15 +135,15 @@ textarea{min-height:78px;resize:vertical;line-height:1.5;}
     <div class="mit-txt" id="mitText"></div>
   </div>
   <div class="card" id="morningCard">
-    <div class="card-title" style="color:var(--accent)">🌅 СУТРЕШЕН ПРОТОКОЛ</div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:14px;color:var(--accent)">🌅 СУТРЕШЕН ПРОТОКОЛ</div>
     <div id="mDoneBanner" class="banner green" style="display:none">✓ Сутринта е настроена — действай!</div>
     <div class="field"><label>🎯 MIT — Едното нещо, което ако направя всичко друго е второстепенно:</label><input type="text" id="mit" placeholder="Конкретно и измеримо..." oninput="saveDay()"></div>
     <div class="field"><label>⚡ Блокер — Кое може да ме спре и как ще го преодолея:</label><input type="text" id="blocker" placeholder="Честно..." oninput="saveDay()"></div>
-    <div class="field"><label>🚫 НЕ — От какво ще кажа НЕ днес за да пазя фокуса:</label><input type="text" id="noToday" placeholder="Кое ще игнорирам..." oninput="saveDay()"></div>
+    <div class="field"><label>🚫 НЕ — От какво ще кажа НЕ днес:</label><input type="text" id="noToday" placeholder="Кое ще игнорирам..." oninput="saveDay()"></div>
     <button class="btn" id="mDoneBtn" onclick="markMorningDone()">✓ Сутринта е настроена</button>
   </div>
   <div class="card">
-    <div class="card-title" style="color:var(--blue)">📊 ДНЕВНИ ДЕЙСТВИЯ</div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:10px;color:var(--blue)">📊 ДНЕВНИ ДЕЙСТВИЯ</div>
     <div style="font-size:14px;color:var(--dim);margin-bottom:14px">ЦЕЛ: 5 обаждания · 5 поста · 2 оферти · 1 сделка</div>
     <div class="counters">
       <div class="counter">
@@ -180,7 +153,7 @@ textarea{min-height:78px;resize:vertical;line-height:1.5;}
           <div class="counter-val" id="calls-val" style="color:var(--blue)">0</div>
           <button class="cnt-btn" style="border-color:var(--blue);background:#5ba4f522;color:var(--blue)" onclick="adj('calls',1)">+</button>
         </div>
-        <div class="progress-bar"><div class="progress-fill" id="calls-bar" style="background:var(--blue);width:0%"></div></div>
+        <div class="pb"><div class="pbf" id="calls-bar" style="background:var(--blue);width:0%"></div></div>
       </div>
       <div class="counter">
         <div class="counter-label" style="color:var(--accent)">📝 ПУБЛИКАЦИИ</div>
@@ -189,7 +162,7 @@ textarea{min-height:78px;resize:vertical;line-height:1.5;}
           <div class="counter-val" id="posts-val" style="color:var(--accent)">0</div>
           <button class="cnt-btn" style="border-color:var(--accent);background:#f0a83022;color:var(--accent)" onclick="adj('posts',1)">+</button>
         </div>
-        <div class="progress-bar"><div class="progress-fill" id="posts-bar" style="background:var(--accent);width:0%"></div></div>
+        <div class="pb"><div class="pbf" id="posts-bar" style="background:var(--accent);width:0%"></div></div>
       </div>
       <div class="counter">
         <div class="counter-label" style="color:var(--purple)">💬 ОФЕРТИ</div>
@@ -198,7 +171,7 @@ textarea{min-height:78px;resize:vertical;line-height:1.5;}
           <div class="counter-val" id="offers-val" style="color:var(--purple)">0</div>
           <button class="cnt-btn" style="border-color:var(--purple);background:#b07ef822;color:var(--purple)" onclick="adj('offers',1)">+</button>
         </div>
-        <div class="progress-bar"><div class="progress-fill" id="offers-bar" style="background:var(--purple);width:0%"></div></div>
+        <div class="pb"><div class="pbf" id="offers-bar" style="background:var(--purple);width:0%"></div></div>
       </div>
       <div class="counter">
         <div class="counter-label" style="color:var(--green)">✅ СДЕЛКИ</div>
@@ -207,13 +180,13 @@ textarea{min-height:78px;resize:vertical;line-height:1.5;}
           <div class="counter-val" id="deals-val" style="color:var(--green)">0</div>
           <button class="cnt-btn" style="border-color:var(--green);background:#2ecc7122;color:var(--green)" onclick="adj('deals',1)">+</button>
         </div>
-        <div class="progress-bar"><div class="progress-fill" id="deals-bar" style="background:var(--green);width:0%"></div></div>
+        <div class="pb"><div class="pbf" id="deals-bar" style="background:var(--green);width:0%"></div></div>
       </div>
     </div>
-    <div class="revenue-box">
-      <div class="revenue-label">💶 ПРИХОД ДНЕС</div>
-      <div class="revenue-val" id="revenue-val">0 €</div>
-      <div class="quick-btns">
+    <div class="rev-box">
+      <div class="rev-lbl">💶 ПРИХОД ДНЕС</div>
+      <div class="rev-val" id="rev-val">0 €</div>
+      <div class="qbtns">
         <button class="qbtn" onclick="addRev(50)">+50€</button>
         <button class="qbtn" onclick="addRev(80)">+80€</button>
         <button class="qbtn" onclick="addRev(120)">+120€</button>
@@ -223,167 +196,153 @@ textarea{min-height:78px;resize:vertical;line-height:1.5;}
     </div>
   </div>
   <div class="card" id="eveningCard">
-    <div class="card-title" style="color:var(--purple)">🌙 ВЕЧЕРЕН ПРЕГЛЕД</div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:14px;color:var(--purple)">🌙 ВЕЧЕРЕН ПРЕГЛЕД</div>
     <div id="eDoneBanner" class="banner green" style="display:none">✓ Денят е затворен — утре отново!</div>
     <div class="field"><label>Направих ли MIT-а? Ако не — защо точно?</label><textarea id="eq1" placeholder="Честен отговор..." oninput="saveDay()"></textarea></div>
-    <div class="field"><label>Кое действие днес доближи мен и семейството ми до стабилност?</label><textarea id="eq2" placeholder="Конкретно..." oninput="saveDay()"></textarea></div>
+    <div class="field"><label>Кое действие доближи мен и семейството ми до стабилност?</label><textarea id="eq2" placeholder="Конкретно..." oninput="saveDay()"></textarea></div>
     <div class="field"><label>Едно нещо което утре ще направя различно:</label><textarea id="eq3" placeholder="Само 1 нещо..." oninput="saveDay()"></textarea></div>
     <button class="btn purple" id="eDoneBtn" onclick="markEveningDone()">✓ Денят е затворен</button>
   </div>
   <div class="card">
-    <div class="card-title" style="color:var(--dim)">📌 БЪРЗА БЕЛЕЖКА</div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:10px;color:var(--dim)">📌 БЪРЗА БЕЛЕЖКА</div>
     <textarea id="dayNote" placeholder="Нещо важно да не забравиш..." oninput="saveDay()"></textarea>
   </div>
 </div>
 
-<!-- ═══ AI КОУЧ ═══ -->
+<!-- AI КОУЧ -->
 <div id="view-ai" class="view">
   <div class="page-row">
-    <div><div class="page-title">AI КОУЧ 🤖</div><div class="page-sub">Личен бизнес партньор</div></div>
+    <div><div class="page-title">AI КОУЧ 🤖</div><div class="page-sub" id="aiSub">...</div></div>
   </div>
 
-  <!-- СТЪПКА 0: Файлът се отваря от file:// -->
-  <div id="hostingNotice" style="display:none">
-    <div class="hosting-box">
-      <div class="hosting-title">⚠️ Нужен е хостинг (1 мин)</div>
-      <div class="hosting-text">За да работи AI Коучът, файлът трябва да е на уебсайт — не директно от телефона. Ето най-лесният начин (безплатно, 60 секунди):</div>
+  <!-- SETUP -->
+  <div id="setupSection">
+    <div class="setup-card">
+      <div class="setup-title">⚙️ Настройка — 5 минути</div>
+      <div class="setup-intro">Използваме Google Apps Script като посредник. Имаш Google акаунт → имаш всичко нужно. Безплатно, веднъж.</div>
 
-      <div class="step-row">
-        <div class="step-num">1</div>
-        <div class="step-text">На компютър или телефон отвори:<br><div class="url-box">netlify.com/drop</div></div>
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-t">Отвори <b>script.google.com</b> → "New project"</div>
       </div>
-      <div class="step-row">
-        <div class="step-num">2</div>
-        <div class="step-text">Плъзни файла <b>vegamag.html</b> в страницата<br><span style="color:var(--dim);font-size:13px">(или натисни "browse to upload" и избери файла)</span></div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-t">Изтрий кода вътре. Копирай кода от файла <b>PROXY_CODE.txt</b> и го постави. Смени <code>ПОСТАВИ_КЛЮЧА_ТУК</code> с ключа от <b>console.anthropic.com</b></div>
       </div>
-      <div class="step-row">
-        <div class="step-num">3</div>
-        <div class="step-text">Netlify ще ти даде линк като:<br><div class="url-box">random-name-123.netlify.app</div>Отвори го на телефона — готово! ✅</div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-t">Натисни <b>Deploy → New deployment → Web app</b><br>
+          "Execute as": <b>Me</b><br>
+          "Who has access": <b>Anyone</b><br>
+          → <b>Deploy</b> → копирай URL-а</div>
       </div>
-      <div class="step-row">
-        <div class="step-num">4</div>
-        <div class="step-text">Добави линка на <b>началния екран</b> на телефона:<br>Safari: Share → "Add to Home Screen"<br>Chrome: Меню → "Add to Home Screen"</div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div class="step-t">Постави URL-а тук:</div>
       </div>
 
-      <div style="font-size:13px;color:var(--dim);margin-top:4px;line-height:1.6">
-        💡 Данните ти (лийдове, навици, прогрес) се пазят в браузъра на телефона, не в облака. Безопасно и лично.
+      <div class="url-row">
+        <input type="url" id="proxyUrl" placeholder="https://script.google.com/macros/s/.../exec">
+        <button class="url-save" onclick="saveProxy()">💾 Запази</button>
       </div>
+      <div class="url-ok" id="urlOk">✅ Готово! AI Коучът е активен.</div>
     </div>
   </div>
 
-  <!-- СТЪПКА 1: API ключ -->
-  <div id="setupBox" style="display:none">
-    <div class="setup-box">
-      <div class="setup-title">🔑 API ключ (1 мин)</div>
-      <div class="setup-text">Нужен е личен ключ от Anthropic. <b>Безплатно</b> — дават $5 кредит при регистрация (достатъчни за стотици разговора).</div>
-      <div class="setup-steps">
-        <b>1.</b> Отвори <b>console.anthropic.com</b><br>
-        <b>2.</b> Регистрирай се / влез<br>
-        <b>3.</b> "API Keys" → "Create Key"<br>
-        <b>4.</b> Копирай ключа (започва с <b>sk-ant-</b>)<br>
-        <b>5.</b> Постави го тук:
-      </div>
-      <div class="api-row">
-        <input type="password" id="apiKeyInput" placeholder="sk-ant-api03-..." autocomplete="off">
-        <button class="api-save" onclick="saveApiKey()">💾 Запази</button>
-      </div>
-      <div id="apiSaved" class="api-saved">✅ Ключът е запазен — AI Коучът е готов!</div>
-    </div>
-  </div>
-
-  <!-- СТЪПКА 2: Чат -->
+  <!-- CHAT -->
   <div id="chatSection" style="display:none">
-    <div class="ai-header">
+    <div class="ai-bar">
       <div>
-        <div class="ai-h-title">🤖 AI Коуч — онлайн</div>
-        <div class="ai-h-sub">Знае за Vegamag, целите и навиците ти</div>
+        <div class="ai-bar-t">🤖 AI Коуч — активен</div>
+        <div class="ai-bar-s">Знае за Vegamag, навиците и целите ти</div>
       </div>
-      <button class="btn sm-dim" onclick="changeApiKey()">🔑 Смени ключ</button>
+      <button class="change-btn" onclick="resetProxy()">⚙️ Промени</button>
     </div>
 
-    <div class="quick-prompts" id="quickPrompts">
-      <button class="qp-btn" onclick="sendQuick('Анализирай моя ден днес и ми дай конкретни насоки за утре.')">📊 Анализ на днешния ден</button>
-      <button class="qp-btn" onclick="sendQuick('Кои са моите 3 най-важни действия тази седмица за повече приход от транспортни услуги след 17:30?')">💶 Как да увелича прихода бързо?</button>
-      <button class="qp-btn" onclick="sendQuick('Оцени моите навици и ми кажи честно кое ме спира от финансова независимост.')">🔥 Кой навик ме спира?</button>
-      <button class="qp-btn" onclick="sendQuick('Дай ми конкретен 30-дневен план за генериране на 3000€ допълнително от транспортния бизнес след 17:30.')">🚀 30-дневен план за 3000€</button>
-      <button class="qp-btn" onclick="sendQuick('Как да балансирам SmartBooks и транспортния бизнес без да се разпилявам? Кой е водещ сега?')">⚖️ Как да балансирам проектите?</button>
+    <div class="qps" id="qps">
+      <button class="qp" onclick="ask('Анализирай моя ден днес — какво направих добре и какво трябва да подобря утре?')">📊 Анализ на днешния ден</button>
+      <button class="qp" onclick="ask('Кои са 3-те най-важни действия тази седмица за повече приход от транспорт след 17:30?')">💶 Как да увелича прихода?</button>
+      <button class="qp" onclick="ask('Оцени моите навици тази седмица и кажи честно кое ме спира от финансова независимост.')">🔥 Кой навик ме спира?</button>
+      <button class="qp" onclick="ask('Дай ми конкретен 30-дневен план за 3000€ допълнително от транспортния бизнес след 17:30.')">🚀 30-дневен план за 3000€</button>
+      <button class="qp" onclick="ask('Как да балансирам SmartBooks.bg и транспортния бизнес? Кой е водещ приоритет СЕГА?')">⚖️ SmartBooks vs Транспорт?</button>
+      <button class="qp" onclick="ask('Какви конкретни текстове да публикувам в FB групи тази седмица за намиране на клиенти за транспорт?')">📱 Текстове за FB публикации</button>
     </div>
 
     <div class="chat-area" id="chatArea">
-      <div class="empty-chat">Избери въпрос или напиши свой ↓</div>
+      <div style="color:var(--dim);font-size:15px;text-align:center;padding:30px 10px">Избери въпрос горе или напиши свой ↓</div>
     </div>
 
-    <div class="chat-input-row">
-      <textarea id="chatInput" placeholder="Питай за бизнес, навици, стратегия..." onkeydown="handleKey(event)"></textarea>
-      <button class="send-btn" id="sendBtn" onclick="sendChat()">➤</button>
+    <div class="chat-row">
+      <textarea id="chatInput" placeholder="Питай за бизнес, навици, пари..." onkeydown="onKey(event)"></textarea>
+      <button class="send-btn" id="sendBtn" onclick="sendMsg()">➤</button>
     </div>
   </div>
 </div>
 
-<!-- ═══ ЛИЙДОВЕ ═══ -->
+<!-- ЛИЙДОВЕ -->
 <div id="view-leads" class="view">
   <div class="page-row">
     <div><div class="page-title">ЛИЙДОВЕ 👥</div><div class="page-sub" id="leadsCount">0 активни</div></div>
-    <button class="btn sm" onclick="toggleLeadForm()">+ НОВ</button>
+    <button class="btn sm" onclick="toggleLF()">+ НОВ</button>
   </div>
   <div class="card" id="leadForm" style="display:none">
-    <div class="card-title" style="color:var(--accent)">НОВ ЛИЙД</div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:14px;color:var(--accent)">НОВ ЛИЙД</div>
     <div class="grid2">
       <div class="field"><label>Име</label><input type="text" id="lName" placeholder="Иван"></div>
       <div class="field"><label>Телефон</label><input type="tel" id="lPhone" placeholder="0888..."></div>
     </div>
     <div class="grid2">
       <div class="field"><label>Източник</label>
-        <select id="lSource"><option>FB</option><option>OLX</option><option>Препоръка</option><option>Директно</option><option>Телефон</option><option>Друго</option></select>
+        <select id="lSrc"><option>FB</option><option>OLX</option><option>Препоръка</option><option>Директно</option><option>Друго</option></select>
       </div>
       <div class="field"><label>Статус</label>
-        <select id="lStatus"><option>НОВ</option><option>КОНТАКТУВАН</option><option>ОФЕРТА</option><option>ПОТВЪРДЕН</option><option>ПЛАТЕН</option></select>
+        <select id="lSt"><option>НОВ</option><option>КОНТАКТУВАН</option><option>ОФЕРТА</option><option>ПОТВЪРДЕН</option><option>ПЛАТЕН</option></select>
       </div>
     </div>
     <div class="field"><label>Бележка</label><textarea id="lNote" placeholder="Какво иска, цена, кога..."></textarea></div>
-    <button class="btn" onclick="addLead()">Добави лийд</button>
+    <button class="btn" onclick="addLead()">Добави</button>
   </div>
   <div id="leadsList"></div>
 </div>
 
-<!-- ═══ НАВИЦИ ═══ -->
+<!-- НАВИЦИ -->
 <div id="view-habits" class="view">
   <div class="page-row">
     <div><div class="page-title">НАВИЦИ 🔥</div><div class="page-sub">Последните 7 дни</div></div>
   </div>
   <div class="card">
-    <div id="habitScore" class="banner accent" style="font-size:16px;font-weight:700;margin-bottom:14px">Днес: 0/6 навика</div>
+    <div id="hScore" class="banner accent" style="font-size:16px;font-weight:700;margin-bottom:14px">Днес: 0/6</div>
     <div class="habit-scroll">
-      <table class="habit-table"><thead id="habitHead"></thead><tbody id="habitBody"></tbody></table>
+      <table class="habit-table"><thead id="hHead"></thead><tbody id="hBody"></tbody></table>
     </div>
   </div>
   <div class="card" style="font-size:15px;color:var(--text2);line-height:1.7">
-    <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px">Защо навиците променят всичко:</div>
-    Не дисциплина, не мотивация — система. Всяко ✓ е доказателство, че ти си човекът, който прави тези неща. 1 малка стъпка всеки ден = 365 стъпки годишно.
+    <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px">Защо навиците са всичко:</div>
+    Не дисциплина, не мотивация — система. Всяко ✓ доказва, че ти си човекът, който прави тези неща. 1 стъпка/ден = 365 стъпки/година.
   </div>
 </div>
 
-<!-- ═══ СЕДМИЦА ═══ -->
+<!-- СЕДМИЦА -->
 <div id="view-week" class="view">
   <div class="page-row">
     <div><div class="page-title">СЕДМИЦА 📊</div><div class="page-sub" id="weekLabel"></div></div>
   </div>
   <div class="card">
-    <div class="card-title" style="color:var(--accent)">🎯 ФОКУС НА ПРОЕКТИТЕ</div>
-    <div class="banner dim">ПРАВИЛО: 1 ВОДЕЩ (80% от времето) + 1 ПОДДЪРЖАН (20% — само не умира). Двата едновременно = нито един напред.</div>
-    <div class="field"><label>🥇 Водещ проект тази седмица (80%):</label><input type="text" id="wLead" placeholder="напр. Транспорт след 17:30" oninput="saveWeek()"></div>
-    <div class="field"><label>🔄 Поддържан (20% — само не умира):</label><input type="text" id="wHold" placeholder="напр. SmartBooks" oninput="saveWeek()"></div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:12px;color:var(--accent)">🎯 ФОКУС НА ПРОЕКТИТЕ</div>
+    <div class="banner dim">1 ВОДЕЩ (80%) + 1 ПОДДЪРЖАН (20%). Двата едновременно = нито един напред.</div>
+    <div class="field"><label>🥇 Водещ проект (80%):</label><input type="text" id="wLead" placeholder="напр. Транспорт след 17:30" oninput="saveWeek()"></div>
+    <div class="field"><label>🔄 Поддържан (20%):</label><input type="text" id="wHold" placeholder="напр. SmartBooks" oninput="saveWeek()"></div>
   </div>
   <div class="card">
-    <div class="card-title" style="color:var(--purple)">🧠 МЕТА ВЪПРОСИ (неделя вечер)</div>
-    <div class="field"><label>Кое действие тази седмица генерира реален резултат?</label><textarea id="wq1" placeholder="Само 1-2 неща честно..." oninput="saveWeek()"></textarea></div>
-    <div class="field"><label>Ако имах само 3 часа — на какво щях да ги дам?</label><textarea id="wq2" placeholder="80/20 принцип..." oninput="saveWeek()"></textarea></div>
-    <div class="field"><label>Какво трябва да СПРА да правя?</label><textarea id="wq3" placeholder="Активности без ефект..." oninput="saveWeek()"></textarea></div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:14px;color:var(--purple)">🧠 МЕТА ВЪПРОСИ (неделя)</div>
+    <div class="field"><label>Кое действие тази седмица даде реален резултат?</label><textarea id="wq1" oninput="saveWeek()" placeholder="1-2 неща честно..."></textarea></div>
+    <div class="field"><label>Ако имах само 3 часа — на какво щях да ги дам?</label><textarea id="wq2" oninput="saveWeek()" placeholder="80/20..."></textarea></div>
+    <div class="field"><label>Какво трябва да СПРА да правя?</label><textarea id="wq3" oninput="saveWeek()" placeholder="Активности без ефект..."></textarea></div>
   </div>
   <div class="card">
-    <div class="card-title" style="color:var(--green)">💶 СЕДМИЧЕН ПРИХОД</div>
-    <div class="stat-big" id="wRevenue" style="color:var(--green)">0 €</div>
-    <div class="quick-btns" style="margin-top:12px">
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:10px;color:var(--green)">💶 СЕДМИЧЕН ПРИХОД</div>
+    <div class="stat-big" id="wRev" style="color:var(--green)">0 €</div>
+    <div class="qbtns" style="margin-top:12px">
       <button class="qbtn" onclick="addWR(100)">+100€</button>
       <button class="qbtn" onclick="addWR(200)">+200€</button>
       <button class="qbtn" onclick="addWR(500)">+500€</button>
@@ -392,274 +351,222 @@ textarea{min-height:78px;resize:vertical;line-height:1.5;}
   </div>
 </div>
 
-<!-- NAV -->
 <nav class="nav">
-  <button class="nav-btn active" id="nav-day" onclick="showView('day')"><span class="icon">⚡</span>ДНЕС</button>
-  <button class="nav-btn" id="nav-ai" onclick="showView('ai')"><span class="icon">🤖</span>AI КОУЧ</button>
-  <button class="nav-btn" id="nav-leads" onclick="showView('leads')"><span class="icon">👥</span>ЛИЙДОВЕ</button>
-  <button class="nav-btn" id="nav-habits" onclick="showView('habits')"><span class="icon">🔥</span>НАВИЦИ</button>
-  <button class="nav-btn" id="nav-week" onclick="showView('week')"><span class="icon">📊</span>СЕДМИЦА</button>
+  <button class="nav-btn active" id="nav-day" onclick="go('day')"><span class="icon">⚡</span>ДНЕС</button>
+  <button class="nav-btn" id="nav-ai" onclick="go('ai')"><span class="icon">🤖</span>AI КОУЧ</button>
+  <button class="nav-btn" id="nav-leads" onclick="go('leads')"><span class="icon">👥</span>ЛИЙДОВЕ</button>
+  <button class="nav-btn" id="nav-habits" onclick="go('habits')"><span class="icon">🔥</span>НАВИЦИ</button>
+  <button class="nav-btn" id="nav-week" onclick="go('week')"><span class="icon">📊</span>СЕДМИЦА</button>
 </nav>
 
 <script>
-// ── HELPERS ──
-const todayKey=()=>new Date().toISOString().split('T')[0];
-const weekKey=()=>'week:'+todayKey().slice(0,7);
-const ls={
-  get:(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch{return d}},
-  set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}},
-  raw:(k)=>{try{return localStorage.getItem(k)||''}catch{return ''}},
-  setRaw:(k,v)=>{try{localStorage.setItem(k,v)}catch{}}
-};
-const fmtEur=n=>(n||0)+' €';
-const last7=()=>Array.from({length:7},(_,i)=>{const d=new Date();d.setDate(d.getDate()-(6-i));return d.toISOString().split('T')[0]});
-const dn=['Нд','Пн','Вт','Ср','Чт','Пт','Сб'];
+const S=(k,v)=>{try{localStorage.setItem('vg_'+k,JSON.stringify(v))}catch{}};
+const L=(k,d)=>{try{const v=localStorage.getItem('vg_'+k);return v?JSON.parse(v):d}catch{return d}};
+const SR=(k,v)=>{try{localStorage.setItem('vg_'+k,v)}catch{}};
+const LR=(k)=>{try{return localStorage.getItem('vg_'+k)||''}catch{return ''}};
+const $=id=>document.getElementById(id);
 const esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-const isFileProtocol=()=>location.protocol==='file:';
+const today=()=>new Date().toISOString().split('T')[0];
+const wk=()=>'w'+today().slice(0,7);
+const last7=()=>Array.from({length:7},(_,i)=>{const d=new Date();d.setDate(d.getDate()-(6-i));return d.toISOString().split('T')[0]});
+const DN=['Нд','Пн','Вт','Ср','Чт','Пт','Сб'];
+const fmtE=n=>(n||0)+' €';
 
-// ── STATE ──
-const DKEY='day:'+todayKey();
-let D=ls.get(DKEY,{mit:'',blocker:'',noToday:'',calls:0,posts:0,offers:0,deals:0,revenue:0,eq1:'',eq2:'',eq3:'',note:'',morningDone:false,eveningDone:false});
-let leads=ls.get('leads:all',[]);
-let W=ls.get(weekKey(),{lead:'',hold:'',wq1:'',wq2:'',wq3:'',revenue:0});
-let H=ls.get('habits:all',{done:{}});
-let chatHistory=[];
+const DK=today();
+let D=L(DK,{mit:'',blocker:'',noToday:'',calls:0,posts:0,offers:0,deals:0,revenue:0,eq1:'',eq2:'',eq3:'',note:'',mDone:false,eDone:false});
+let leads=L('leads',[]);
+let W=L(wk(),{lead:'',hold:'',q1:'',q2:'',q3:'',rev:0});
+let H=L('habits',{done:{}});
+let hist=[];
 
 const HABITS=[
   {id:'morning',label:'🌅 Сутрешен протокол'},
-  {id:'mit90',  label:'🎯 MIT работа 90+ мин'},
-  {id:'calls5', label:'📞 5+ обаждания'},
-  {id:'posts5', label:'📝 5+ публикации'},
+  {id:'mit90',label:'🎯 MIT работа 90+ мин'},
+  {id:'calls5',label:'📞 5+ обаждания'},
+  {id:'posts5',label:'📝 5+ публикации'},
   {id:'noscrol',label:'🚫 Без безсмислен скрол'},
   {id:'evening',label:'🌙 Вечерен преглед'},
 ];
 const SC={НОВ:'#5ba4f5',КОНТАКТУВАН:'#f0a830',ОФЕРТА:'#b07ef8',ПОТВЪРДЕН:'#2ecc71',ПЛАТЕН:'#2ecc71',ОТКАЗАН:'#e74c3c'};
+const STATS=['НОВ','КОНТАКТУВАН','ОФЕРТА','ПОТВЪРДЕН','ПЛАТЕН','ОТКАЗАН'];
 
-// ── VIEWS ──
-function showView(v){
+function go(v){
   document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(el=>el.classList.remove('active'));
-  document.getElementById('view-'+v).classList.add('active');
-  document.getElementById('nav-'+v).classList.add('active');
+  $('view-'+v).classList.add('active');
+  $('nav-'+v).classList.add('active');
   if(v==='leads')renderLeads();
   if(v==='habits')renderHabits();
-  if(v==='ai')initAiView();
+  if(v==='ai')initAI();
 }
 
-// ── DAY ──
+// DAY
 function initDay(){
-  const d=new Date();
-  document.getElementById('todayDate').textContent=d.toLocaleDateString('bg-BG',{weekday:'long',day:'numeric',month:'long'});
+  $('todayDate').textContent=new Date().toLocaleDateString('bg-BG',{weekday:'long',day:'numeric',month:'long'});
   ['mit','blocker','noToday','eq1','eq2','eq3','dayNote'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(el)el.value=D[id==='dayNote'?'note':id]||'';
+    const el=$(id);if(el)el.value=D[id==='dayNote'?'note':id]||'';
   });
-  ['calls','posts','offers','deals'].forEach(f=>updateCUI(f));
-  updateRevUI();
-  if(D.morningDone)applyMorningDone();
-  if(D.eveningDone)applyEveningDone();
-  updateMitDisplay();updateScore();
+  ['calls','posts','offers','deals'].forEach(f=>rC(f));
+  rR();
+  if(D.mDone)applyMD();
+  if(D.eDone)applyED();
+  rMIT();rScore();
 }
 function saveDay(){
   ['mit','blocker','noToday','eq1','eq2','eq3','dayNote'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(el)D[id==='dayNote'?'note':id]=el.value;
+    const el=$(id);if(el)D[id==='dayNote'?'note':id]=el.value;
   });
-  ls.set(DKEY,D);updateMitDisplay();
+  S(DK,D);rMIT();
 }
-function updateMitDisplay(){
-  const box=document.getElementById('mitDisplay');
-  if(D.mit&&D.morningDone){box.style.display='block';document.getElementById('mitText').textContent=D.mit;}
-  else box.style.display='none';
+function rMIT(){
+  const b=$('mitDisplay');
+  if(D.mit&&D.mDone){b.style.display='block';$('mitText').textContent=D.mit;}
+  else b.style.display='none';
 }
-function adj(f,delta){D[f]=Math.max(0,(D[f]||0)+delta);ls.set(DKEY,D);updateCUI(f);updateScore();}
-function updateCUI(f){
-  const goals={calls:5,posts:5,offers:2,deals:1};
-  const val=D[f]||0,pct=Math.min(100,Math.round(val/(goals[f]||1)*100));
-  document.getElementById(f+'-val').textContent=val;
-  document.getElementById(f+'-bar').style.width=pct+'%';
+function adj(f,d){D[f]=Math.max(0,(D[f]||0)+d);S(DK,D);rC(f);rScore();}
+function rC(f){
+  const g={calls:5,posts:5,offers:2,deals:1},val=D[f]||0,pct=Math.min(100,Math.round(val/(g[f]||1)*100));
+  $(f+'-val').textContent=val;$(f+'-bar').style.width=pct+'%';
 }
-function addRev(a){D.revenue=(D.revenue||0)+a;ls.set(DKEY,D);updateRevUI();updateScore();}
+function addRev(a){D.revenue=(D.revenue||0)+a;S(DK,D);rR();rScore();}
 function addRevCustom(){const a=prompt('Сума в €:');if(a&&!isNaN(a))addRev(Number(a));}
-function updateRevUI(){document.getElementById('revenue-val').textContent=fmtEur(D.revenue);}
-function updateScore(){
+function rR(){$('rev-val').textContent=fmtE(D.revenue);}
+function rScore(){
   const c=Math.min(1,(D.calls||0)/5),p=Math.min(1,(D.posts||0)/5),o=Math.min(1,(D.offers||0)/2),dl=D.deals>0?1:0;
   const s=Math.round((c+p+o+dl)/4*100);
-  const el=document.getElementById('topScore');
-  el.textContent=s+'%';
+  const el=$('topScore');el.textContent=s+'%';
   el.style.color=s>=75?'#2ecc71':s>=40?'#f0a830':'#e74c3c';
 }
-function markMorningDone(){D.morningDone=true;ls.set(DKEY,D);applyMorningDone();updateMitDisplay();}
-function applyMorningDone(){
-  document.getElementById('mDoneBanner').style.display='block';
-  document.getElementById('mDoneBtn').style.display='none';
-  document.getElementById('morningCard').style.borderColor='#2ecc7144';
-}
-function markEveningDone(){D.eveningDone=true;saveDay();applyEveningDone();}
-function applyEveningDone(){
-  document.getElementById('eDoneBanner').style.display='block';
-  document.getElementById('eDoneBtn').style.display='none';
-  document.getElementById('eveningCard').style.borderColor='#2ecc7144';
-}
+function markMorningDone(){D.mDone=true;S(DK,D);applyMD();rMIT();}
+function applyMD(){$('mDoneBanner').style.display='block';$('mDoneBtn').style.display='none';$('morningCard').style.borderColor='#2ecc7144';}
+function markEveningDone(){D.eDone=true;saveDay();applyED();}
+function applyED(){$('eDoneBanner').style.display='block';$('eDoneBtn').style.display='none';$('eveningCard').style.borderColor='#2ecc7144';}
 
-// ── AI VIEW LOGIC ──
-function initAiView(){
-  const isFile=isFileProtocol();
-  const hasKey=!!getApiKey();
-  document.getElementById('hostingNotice').style.display=isFile?'block':'none';
-  document.getElementById('setupBox').style.display=(!isFile&&!hasKey)?'block':'none';
-  document.getElementById('chatSection').style.display=(!isFile&&hasKey)?'block':'none';
+// AI
+function initAI(){
+  const url=LR('proxy');
+  if(!url){
+    $('setupSection').style.display='block';
+    $('chatSection').style.display='none';
+    $('aiSub').textContent='Нужна е настройка';
+  }else{
+    $('setupSection').style.display='none';
+    $('chatSection').style.display='block';
+    $('aiSub').textContent='Активен ✓';
+  }
 }
-function getApiKey(){return ls.raw('vegamag_api_key');}
-function saveApiKey(){
-  const key=document.getElementById('apiKeyInput').value.trim();
-  if(!key.startsWith('sk-ant-')){
-    alert('Ключът трябва да започва с "sk-ant-"\nПровери дали си копирал целия ключ.');
+function saveProxy(){
+  const url=$('proxyUrl').value.trim();
+  if(!url.includes('script.google.com')&&!url.startsWith('https://')){
+    alert('Провери URL — трябва да е от Google Apps Script\n(script.google.com/macros/s/.../exec)');
     return;
   }
-  ls.setRaw('vegamag_api_key',key);
-  document.getElementById('apiSaved').style.display='block';
-  setTimeout(()=>initAiView(),1200);
+  SR('proxy',url);
+  $('urlOk').style.display='block';
+  setTimeout(()=>initAI(),1000);
 }
-function changeApiKey(){
-  ls.setRaw('vegamag_api_key','');
-  chatHistory=[];
-  document.getElementById('chatArea').innerHTML='<div class="empty-chat">Избери въпрос или напиши свой ↓</div>';
-  document.getElementById('quickPrompts').style.display='flex';
-  initAiView();
+function resetProxy(){
+  SR('proxy','');hist=[];
+  $('chatArea').innerHTML='<div style="color:var(--dim);font-size:15px;text-align:center;padding:30px 10px">Избери въпрос горе или напиши свой ↓</div>';
+  $('qps').style.display='flex';
+  initAI();
 }
 
-// ── AI CONTEXT ──
-function buildContext(){
-  const today=todayKey();
-  const hDone=HABITS.filter(h=>H.done[h.id+':'+today]).map(h=>h.label);
-  const hPct=Math.round(hDone.length/HABITS.length*100);
-  const score=Math.round((Math.min(1,(D.calls||0)/5)+Math.min(1,(D.posts||0)/5)+Math.min(1,(D.offers||0)/2)+(D.deals>0?1:0))/4*100);
-  return `КОНТЕКСТ — МИЛЕН АЙДЕНОВ / VEGAMAG ЕООД:
+function buildCtx(){
+  const t=today();
+  const hD=HABITS.filter(h=>H.done[h.id+':'+t]).map(h=>h.label);
+  const sc=Math.round((Math.min(1,(D.calls||0)/5)+Math.min(1,(D.posts||0)/5)+Math.min(1,(D.offers||0)/2)+(D.deals>0?1:0))/4*100);
+  return `КОНТЕКСТ — МИЛЕН / VEGAMAG ЕООД:
+Бизнес: транспортни услуги с бус след 17:30 и уикенд | SmartBooks.bg (AI счетоводство)
+Финанси: ~10 000€ задължения | Нужда: +2000-4000€/мес БЪРЗО
+Семейство: съпруга + 3 деца | Заплата: ~1000€/мес
 
-БИЗНЕС:
-- Фирма: Vegamag ЕООД
-- Транспортни услуги с личен бус след 17:30 и уикенд
-- Втори проект: SmartBooks.bg (AI счетоводна платформа)
-- Финанси: ипотека + заеми + запор ~10 000€; нужда от +2000-4000€/мес БЪРЗО
-- Семейство: съпруга + 3 деца (1-ви, 4-ти, 8-ми клас); съпруга с 30 000€ кредити
-- Основна заплата: ~1000€/мес
-
-ДНЕС (${today}):
-MIT: ${D.mit||'(не е попълнен)'}
-Блокер: ${D.blocker||'(не е попълнен)'}
+ДНЕС (${t}):
+MIT: "${D.mit||'?'}" | Блокер: "${D.blocker||'?'}"
 Обаждания: ${D.calls||0}/5 | Публикации: ${D.posts||0}/5 | Оферти: ${D.offers||0}/2 | Сделки: ${D.deals||0}
-Приход: ${D.revenue||0}€ | Резултат: ${score}%
-Вечерен отговор: "${D.eq1||''}"
-
-НАВИЦИ ДНЕС: ${hDone.length}/${HABITS.length} (${hPct}%)
-Изпълнени: ${hDone.join(', ')||'нито един'}
-
-ЛИЙДОВЕ: ${leads.filter(l=>l.status!=='ОТКАЗАН').length} активни | ${leads.filter(l=>l.status==='ПЛАТЕН').length} платени
-Водещ проект: ${W.lead||'(не е зададен)'}
-Поддържан: ${W.hold||'(не е зададен)'}
-Седмичен приход: ${W.revenue||0}€`;
+Приход: ${D.revenue||0}€ | Резултат: ${sc}%
+Вечерен: "${D.eq1||''}"
+Навици: ${hD.length}/${HABITS.length} — ${hD.join(', ')||'нито един'}
+Водещ: ${W.lead||'?'} | Поддържан: ${W.hold||'?'} | Седм. приход: ${W.rev||0}€
+Лийдове: ${leads.filter(l=>l.status!=='ОТКАЗАН').length} активни`;
 }
 
 const SYS=`Ти си личен бизнес коуч на Милен Айденов. Говориш САМО на български (кирилица).
+Директен, конкретен, без клишета. Даваш конкретни следващи действия с времена.
+Кратки параграфи за мобилен. Фокус: cashflow СЕГА.
+Завършваш ВИНАГИ с 1-3 конкретни следващи стъпки. НИКОГА не казваш "Разбира се!" или "Чудесен въпрос!".`;
 
-СТИЛ:
-- Директен, конкретен — без мотивационни клишета
-- Конкретни следващи действия с времена ("утре 12:30 — обади се на 5 склада")
-- Честен — ако нещо не работи, казваш го директно  
-- Кратки параграфи за мобилен телефон
-- Анализираш данните от контекста
-- Фокус: cashflow СЕГА, мащаб после
-- Завършваш ВИНАГИ с 1-3 конкретни следващи стъпки
+async function ask(q){$('qps').style.display='none';await sendAI(q);}
+async function sendMsg(){const i=$('chatInput'),m=i.value.trim();if(!m)return;i.value='';await sendAI(m);}
 
-НИКОГА не казваш "Разбира се!" или "Чудесен въпрос!"`;
-
-async function sendChat(){
-  const input=document.getElementById('chatInput');
-  const msg=input.value.trim();
-  if(!msg)return;
-  input.value='';
-  await processMsg(msg);
-}
-async function sendQuick(msg){
-  document.getElementById('quickPrompts').style.display='none';
-  await processMsg(msg);
-}
-async function processMsg(userMsg){
-  const chatArea=document.getElementById('chatArea');
-  const sendBtn=document.getElementById('sendBtn');
-  if(chatHistory.length===0)chatArea.innerHTML='';
-  chatArea.innerHTML+=`<div class="msg msg-user"><div class="msg-label">ТИ</div><div class="msg-bubble">${esc(userMsg)}</div></div>`;
+async function sendAI(userMsg){
+  const ca=$('chatArea'),sb=$('sendBtn');
+  if(hist.length===0)ca.innerHTML='';
+  ca.innerHTML+=`<div class="msg msg-user"><div class="msg-lbl">ТИ</div><div class="bubble">${esc(userMsg)}</div></div>`;
   const tid='t'+Date.now();
-  chatArea.innerHTML+=`<div class="msg msg-ai" id="${tid}"><div class="msg-label">AI КОУЧ</div><div class="msg-bubble"><div class="typing"><span></span><span></span><span></span></div></div></div>`;
-  chatArea.scrollTop=chatArea.scrollHeight;
-  sendBtn.disabled=true;
-  chatHistory.push({role:'user',content:userMsg});
-  try{
-    const ctx=buildContext();
-    const apiMsgs=[];
-    let first=true;
-    for(const m of chatHistory){
-      if(m.role==='user'&&first){apiMsgs.push({role:'user',content:ctx+'\n\n---\n\n'+m.content});first=false;}
-      else apiMsgs.push(m);
-    }
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key':getApiKey(),
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-allow-browser':'true'
-      },
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYS,messages:apiMsgs})
-    });
-    const data=await res.json();
-    if(data.error)throw new Error(data.error.message||'API грешка');
-    const reply=data.content?.[0]?.text||'Грешка — опитай отново.';
-    chatHistory.push({role:'assistant',content:reply});
-    document.getElementById(tid).remove();
-    const fmt=esc(reply).replace(/\*\*(.*?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');
-    chatArea.innerHTML+=`<div class="msg msg-ai"><div class="msg-label">AI КОУЧ</div><div class="msg-bubble">${fmt}</div></div>`;
-  }catch(e){
-    document.getElementById(tid).remove();
-    let errMsg='⚠️ Грешка при свързване.';
-    if(e.message&&e.message.toLowerCase().includes('api_key'))errMsg='⚠️ Невалиден API ключ. Натисни "Смени ключ".';
-    else if(e.message)errMsg='⚠️ '+e.message;
-    chatArea.innerHTML+=`<div class="msg msg-ai"><div class="msg-bubble" style="color:var(--red)">${esc(errMsg)}</div></div>`;
-  }
-  sendBtn.disabled=false;
-  chatArea.scrollTop=chatArea.scrollHeight;
-}
-function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat();}}
+  ca.innerHTML+=`<div class="msg msg-ai" id="${tid}"><div class="msg-lbl">AI КОУЧ</div><div class="bubble"><div class="typing"><span></span><span></span><span></span></div></div></div>`;
+  ca.scrollTop=ca.scrollHeight;
+  sb.disabled=true;
+  hist.push({role:'user',content:userMsg});
 
-// ── LEADS ──
-function toggleLeadForm(){const f=document.getElementById('leadForm');f.style.display=f.style.display==='none'?'block':'none';}
-function addLead(){
-  const name=document.getElementById('lName').value.trim(),phone=document.getElementById('lPhone').value.trim();
-  if(!name||!phone){alert('Попълни Ime и Telefon');return;}
-  leads.unshift({id:Date.now(),name,phone,source:document.getElementById('lSource').value,status:document.getElementById('lStatus').value,note:document.getElementById('lNote').value.trim(),created:todayKey()});
-  ls.set('leads:all',leads);
-  ['lName','lPhone','lNote'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('leadForm').style.display='none';
-  renderLeads();
+  try{
+    const msgs=hist.map((m,i)=>i===0&&m.role==='user'
+      ?{role:'user',content:buildCtx()+'\n\n---\n\nВъпрос: '+m.content}
+      :m
+    );
+
+    const res=await fetch(LR('proxy'),{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-haiku-4-5-20251001',
+        max_tokens:1024,
+        system:SYS,
+        messages:msgs
+      })
+    });
+
+    const data=await res.json();
+    if(data.error)throw new Error(data.error.message);
+
+    const reply=data.content?.[0]?.text||'Грешка.';
+    hist.push({role:'assistant',content:reply});
+    $(tid).remove();
+    const fmt=esc(reply).replace(/\*\*(.*?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');
+    ca.innerHTML+=`<div class="msg msg-ai"><div class="msg-lbl">AI КОУЧ</div><div class="bubble">${fmt}</div></div>`;
+  }catch(e){
+    $(tid).remove();
+    ca.innerHTML+=`<div class="msg msg-ai"><div class="bubble" style="color:var(--red)">⚠️ ${esc(e.message||'Грешка. Провери proxy URL-а.')}</div></div>`;
+  }
+  sb.disabled=false;
+  ca.scrollTop=ca.scrollHeight;
 }
-function setLeadStatus(id,s){leads=leads.map(l=>l.id===id?{...l,status:s}:l);ls.set('leads:all',leads);renderLeads();}
-function deleteLead(id){if(!confirm('Изтрий?'))return;leads=leads.filter(l=>l.id!==id);ls.set('leads:all',leads);renderLeads();}
+function onKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}}
+
+// LEADS
+function toggleLF(){const f=$('leadForm');f.style.display=f.style.display==='none'?'block':'none';}
+function addLead(){
+  const n=$('lName').value.trim(),p=$('lPhone').value.trim();
+  if(!n||!p){alert('Попълни Ime и Telefon');return;}
+  leads.unshift({id:Date.now(),name:n,phone:p,src:$('lSrc').value,status:$('lSt').value,note:$('lNote').value.trim(),date:today()});
+  S('leads',leads);['lName','lPhone','lNote'].forEach(id=>$(id).value='');
+  $('leadForm').style.display='none';renderLeads();
+}
+function setSt(id,s){leads=leads.map(l=>l.id===id?{...l,status:s}:l);S('leads',leads);renderLeads();}
+function delL(id){if(!confirm('Изтрий?'))return;leads=leads.filter(l=>l.id!==id);S('leads',leads);renderLeads();}
 function renderLeads(){
-  const active=leads.filter(l=>l.status!=='ОТКАЗАН').length;
-  document.getElementById('leadsCount').textContent=active+' активни';
-  const STATUSES=['НОВ','КОНТАКТУВАН','ОФЕРТА','ПОТВЪРДЕН','ПЛАТЕН','ОТКАЗАН'];
-  const list=document.getElementById('leadsList');
-  if(!leads.length){list.innerHTML='<div style="text-align:center;padding:50px;color:var(--dim);font-size:17px">Няма лийдове. Добави първия!</div>';return;}
+  $('leadsCount').textContent=leads.filter(l=>l.status!=='ОТКАЗАН').length+' активни';
+  const list=$('leadsList');
+  if(!leads.length){list.innerHTML='<div style="text-align:center;padding:50px;color:var(--dim);font-size:17px">Добави първия лийд!</div>';return;}
   list.innerHTML=leads.map(l=>{
     const sc=SC[l.status]||'#666';
-    const btns=STATUSES.filter(s=>s!==l.status).map(s=>`<button class="sbtn" style="border:1.5px solid ${SC[s]||'#666'}55;color:${SC[s]||'#666'}" onclick="setLeadStatus(${l.id},'${s}')">→ ${s}</button>`).join('');
+    const btns=STATS.filter(s=>s!==l.status).map(s=>`<button class="sbtn" style="border:1.5px solid ${SC[s]||'#666'}55;color:${SC[s]||'#666'}" onclick="setSt(${l.id},'${s}')">→${s}</button>`).join('');
     return `<div class="lead-card" style="border-left-color:${sc}">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
-        <div style="flex:1"><div class="lead-name">${esc(l.name)}</div><div class="lead-meta">${esc(l.phone)} · ${l.source} · ${l.created}</div>${l.note?`<div class="lead-note">${esc(l.note)}</div>`:''}</div>
+        <div style="flex:1"><div class="lead-name">${esc(l.name)}</div><div class="lead-meta">${esc(l.phone)} · ${l.src} · ${l.date}</div>${l.note?`<div class="lead-note">${esc(l.note)}</div>`:''}</div>
         <div style="display:flex;gap:8px;align-items:center;flex-shrink:0">
           <span class="badge" style="background:${sc}22;color:${sc};border:1px solid ${sc}44">${l.status}</span>
-          <button onclick="deleteLead(${l.id})" style="background:none;border:none;color:var(--dim);cursor:pointer;font-size:26px;line-height:1;padding:0">×</button>
+          <button onclick="delL(${l.id})" style="background:none;border:none;color:var(--dim);cursor:pointer;font-size:26px;line-height:1;padding:0">×</button>
         </div>
       </div>
       <div class="status-btns" style="margin-top:10px">${btns}</div>
@@ -667,39 +574,37 @@ function renderLeads(){
   }).join('');
 }
 
-// ── HABITS ──
+// HABITS
 function renderHabits(){
-  const days=last7(),today=todayKey();
-  document.getElementById('habitHead').innerHTML='<tr><th class="hn">НАВИК</th>'+days.map(d=>`<th style="color:${d===today?'var(--accent)':'var(--dim)'};font-weight:${d===today?700:400}">${dn[new Date(d+'T12:00:00').getDay()]}</th>`).join('')+'</tr>';
-  document.getElementById('habitBody').innerHTML=HABITS.map(h=>{
-    const cells=days.map(d=>{const k=h.id+':'+d,done=H.done[k];return `<td><div class="hcheck" style="border-color:${done?'var(--green)':'var(--border)'};background:${done?'#2ecc7122':'#ffffff08'}" onclick="toggleH('${h.id}','${d}')">${done?'✓':''}</div></td>`;}).join('');
+  const days=last7(),t=today();
+  $('hHead').innerHTML='<tr><th class="hn">НАВИК</th>'+days.map(d=>`<th style="color:${d===t?'var(--accent)':'var(--dim)'};font-weight:${d===t?700:400}">${DN[new Date(d+'T12:00:00').getDay()]}</th>`).join('')+'</tr>';
+  $('hBody').innerHTML=HABITS.map(h=>{
+    const cells=days.map(d=>{const done=H.done[h.id+':'+d];return `<td><div class="hcheck" style="border-color:${done?'var(--green)':'var(--border)'};background:${done?'#2ecc7122':'#ffffff08'}" onclick="togH('${h.id}','${d}')">${done?'✓':''}</div></td>`;}).join('');
     return `<tr><td class="hn">${h.label}</td>${cells}</tr>`;
   }).join('');
-  const todayDone=HABITS.filter(h=>H.done[h.id+':'+today]).length;
-  const pct=Math.round(todayDone/HABITS.length*100);
-  const b=document.getElementById('habitScore');
-  b.textContent=`Днес: ${todayDone}/${HABITS.length} навика — ${pct}%`;
+  const done=HABITS.filter(h=>H.done[h.id+':'+t]).length,pct=Math.round(done/HABITS.length*100);
+  const b=$('hScore');
+  b.textContent=`Днес: ${done}/${HABITS.length} навика — ${pct}%`;
   b.style.color=pct>=80?'var(--green)':pct>=50?'var(--accent)':'var(--red)';
   b.style.background=pct>=80?'#2ecc7111':pct>=50?'#f0a83011':'#e74c3c11';
   b.style.borderColor=pct>=80?'#2ecc7133':pct>=50?'#f0a83033':'#e74c3c33';
 }
-function toggleH(id,date){H.done[id+':'+date]=!H.done[id+':'+date];ls.set('habits:all',H);renderHabits();}
+function togH(id,d){H.done[id+':'+d]=!H.done[id+':'+d];S('habits',H);renderHabits();}
 
-// ── WEEK ──
+// WEEK
 function initWeek(){
-  document.getElementById('weekLabel').textContent=new Date().toLocaleDateString('bg-BG',{month:'long',year:'numeric'});
-  const m={wLead:'lead',wHold:'hold',wq1:'wq1',wq2:'wq2',wq3:'wq3'};
-  Object.entries(m).forEach(([id,k])=>document.getElementById(id).value=W[k]||'');
-  document.getElementById('wRevenue').textContent=fmtEur(W.revenue);
+  $('weekLabel').textContent=new Date().toLocaleDateString('bg-BG',{month:'long',year:'numeric'});
+  $('wLead').value=W.lead||'';$('wHold').value=W.hold||'';
+  $('wq1').value=W.q1||'';$('wq2').value=W.q2||'';$('wq3').value=W.q3||'';
+  $('wRev').textContent=fmtE(W.rev);
 }
 function saveWeek(){
-  W.lead=document.getElementById('wLead').value;W.hold=document.getElementById('wHold').value;
-  W.wq1=document.getElementById('wq1').value;W.wq2=document.getElementById('wq2').value;W.wq3=document.getElementById('wq3').value;
-  ls.set(weekKey(),W);
+  W.lead=$('wLead').value;W.hold=$('wHold').value;
+  W.q1=$('wq1').value;W.q2=$('wq2').value;W.q3=$('wq3').value;
+  S(wk(),W);
 }
-function addWR(a){W.revenue=(W.revenue||0)+a;ls.set(weekKey(),W);document.getElementById('wRevenue').textContent=fmtEur(W.revenue);}
+function addWR(a){W.rev=(W.rev||0)+a;S(wk(),W);$('wRev').textContent=fmtE(W.rev);}
 
-// ── INIT ──
 initDay();initWeek();renderHabits();
 </script>
 </body>
